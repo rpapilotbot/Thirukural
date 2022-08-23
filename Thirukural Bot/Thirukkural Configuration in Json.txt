@@ -1,0 +1,9 @@
+{
+	"ThiukkuralPageUrl": "https://srirangaminfo.com/thirukkural.php",
+	"MailTo": "sankaravenie5@gmail.com,aartiak.e5@gmail.com,narenbagavathye5@gmail.com,sharongiftae5@gmail.com,prasanth9534@gmail.com,sathyamoorthie5@gmail.com,sornalakshmie5@gmail.com,naresh.kumar@e5.ai,muthukumarsekar1986@gmail.com,lakshmi.u@tiliconveli.com,alagappan.m@e5.ai",
+	"PortNumber": "465",
+	"EmailServer": "smtp.gmail.com",
+	"QueueName": "Thirukurals",
+	"AssetName": "Email Credentials",
+	"KuralStyles": "<html><body></br><h3 style='text-align: center;color:DarkRed'>தினம் ஒரு குறள்</h3></br><b>குறள் :</b></br></br><p style='color:DodgerBlue'>{0}</p><p style='color:DodgerBlue'>{1}</p><p>{2}</p></br></br><p>{3}</p><p>{4}</p></body></html>"
+}
