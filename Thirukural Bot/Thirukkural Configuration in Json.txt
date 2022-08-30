@@ -1,6 +1,6 @@
 {
 	"ThiukkuralPageUrl": "https://srirangaminfo.com/thirukkural.php",
-	"MailTo": "sankaravenie5@gmail.com,aartiak.e5@gmail.com,narenbagavathye5@gmail.com,sharongiftae5@gmail.com,prasanth9534@gmail.com,sathyamoorthie5@gmail.com,sornalakshmie5@gmail.com,naresh.kumar@e5.ai,muthukumarsekar1986@gmail.com,lakshmi.u@tiliconveli.com,alagappan.m@e5.ai",
+	"MailTo": "sankaravenie5@gmail.com,aartiak.e5@gmail.com,narenbagavathye5@gmail.com,sharongiftae5@gmail.com,prasanth9534@gmail.com,sathyamoorthie5@gmail.com,sornalakshmie5@gmail.com,naresh.kumar@e5.ai,lakshmi.u@tiliconveli.com",
 	"PortNumber": "465",
 	"EmailServer": "smtp.gmail.com",
 	"QueueName": "Thirukurals",
