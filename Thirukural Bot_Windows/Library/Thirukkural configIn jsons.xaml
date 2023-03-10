@@ -2,16 +2,14 @@
   <x:Members>
     <x:Property Name="in_thirukkuralConfiFilePath" Type="InArgument(x:String)" />
     <x:Property Name="out_configJson" Type="OutArgument(njl:JObject)" />
-    <x:Property Name="out_mailPassWord" Type="OutArgument(x:String)" />
-    <x:Property Name="out_mailUserName" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1066,1625</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>656,1932</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Thirukkural_configIn_jsons_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="62">
+    <scg:List x:TypeArguments="x:String" Capacity="39">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -49,10 +47,12 @@
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>Tiliconveli_Core.Library.Error_Code</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -96,9 +96,15 @@
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Tiliconveli Core</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Configuration details for the Thirukkural Project." DisplayName="Thirukkural_configIn_jsons" sap:VirtualizedContainerService.HintSize="496,1560" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Configuration details for the Thirukkural Project." DisplayName="Thirukkural_configIn_jsons" sap:VirtualizedContainerService.HintSize="472,1867" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_configFile" />
       <Variable x:TypeArguments="ss:SecureString" Name="secstr_mailPassword" />
@@ -109,24 +115,69 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started the Thirukkural_configIn_jsons&quot;]" />
-    <ucas:ReadStorageText TimeoutMS="{x:Null}" DisplayName="Read Storage Text" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="ReadStorageText_1" Path="[in_thirukkuralConfiFilePath]" Result="[str_configFile]" StorageBucketName="Thirukural" />
-    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName=" Json String to JObject Deserialize JSON" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[out_configJson]" JsonString="[str_configFile]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[out_configJson]" />
-    <ui:GetRobotCredential AssetName="[out_configJson(&quot;ORCHESTRATOR&quot;)(&quot;AssetName&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential from the Assests" sap:VirtualizedContainerService.HintSize="434,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_mailPassword]" Username="[out_mailUserName]">
-      <ui:GetRobotCredential.TimeoutMS>
-        <InArgument x:TypeArguments="x:Int32" />
-      </ui:GetRobotCredential.TimeoutMS>
-    </ui:GetRobotCredential>
-    <Assign DisplayName="Password securestring to string - Assign" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[out_mailPassWord]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[New System.Net.NetworkCredential(string.Empty, secstr_mailPassword).Password]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[out_mailPassWord]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Ended the Thirukkural_configIn_jsons&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started the Thirukkural_configIn_jsons&quot;]" />
+    <If Condition="[string.IsNullOrEmpty(in_thirukkuralConfiFilePath)]" DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="410,508" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New BusinessRuleException(&quot;Null value is passed for flow config file path&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Value is passed for flow config file path&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ucas:ReadStorageText TimeoutMS="{x:Null}" DisplayName="Read Storage Text" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="ReadStorageText_1" Path="[in_thirukkuralConfiFilePath]" Result="[str_configFile]" StorageBucketName="Thirukural" />
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName=" Json String to JObject Deserialize JSON" sap:VirtualizedContainerService.HintSize="410,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[out_configJson]" JsonString="[str_configFile]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[out_configJson]" />
+    <If Condition="[out_configJson Is Nothing]" DisplayName="Output Validation" sap:VirtualizedContainerService.HintSize="410,508" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New BusinessRuleException(&quot;Null value is passed in thirukural flow config&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="str_errorConfig" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Flow config is read successfully&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Ended the Thirukkural_configIn_jsons&quot;]" />
   </Sequence>
 </Activity>

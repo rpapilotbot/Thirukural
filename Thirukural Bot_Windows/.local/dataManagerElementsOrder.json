@@ -1,0 +1,161 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Thirukkural configIn jsons.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_thirukkuralConfiFilePath",
+        "out_configJson",
+        "out_mailPassWord",
+        "out_mailUserName"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Extract_1330_Thirukkural_From_Thirukkural_Website.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_OpenThirukkuralSrirangamWebsite",
+        "io_int_1330ThirukkuralExplanation",
+        "io_kuralDataTable",
+        "in_athigaram",
+        "in_nonWorkingDaysDataTable",
+        "io_dateCount"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Sending mail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_toaddress",
+        "in_subject",
+        "in_body",
+        "in_port",
+        "in_server",
+        "in_email",
+        "in_password"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "choose_Adhigaram(Autosaved).xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Opoen the Thirukkural Web Page.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_sirrangamUrl",
+        "out_nonWorkingDaysDataTable",
+        "in_nonWorkingFilePath"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Thirukkural configIn jsons.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_thirukkuralConfiFilePath",
+        "out_configJson"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Open the Thirukkural Web Page.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_flowConfig",
+        "in_sirrangamUrl",
+        "out_nonWorkingDaysDataTable",
+        "in_nonWorkingFilePath"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/choose_Adhigaram.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_adhiGaaram",
+        "in_flowConfig"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Extract_1330_Thirukkural_From_Thirukkural_Website.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_FlowConfig",
+        "in_OpenThirukkuralSrirangamWebsite",
+        "io_int_1330ThirukkuralExplanation",
+        "io_kuralDataTable",
+        "in_athigaram",
+        "in_nonWorkingDaysDataTable",
+        "io_dateCount"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Write the Excel File.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_FlowConfig",
+        "in_thirukkuralExcelPath",
+        "in_thirukkuralData",
+        "in_sheetName"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Sending mail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_FlowConfig",
+        "in_toaddress",
+        "in_subject",
+        "in_body"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}
