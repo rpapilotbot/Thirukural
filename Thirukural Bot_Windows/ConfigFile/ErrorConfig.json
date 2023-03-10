@@ -1,0 +1,11 @@
+{"INVALID_KEY":	"ER001Missing config key",
+"NULL_FLOW_CONFIG_VALUE":	"ER002 Input data of the flow config file is null",
+"NULL_QUEUE_NAME":"ER003 Null value passed in queue name",
+"UNABLE_TO_SEND_MAIL":"ER004Failed to send mail",
+"INVALID_MAIL_FORMAT":"ER005 Improper mail format",
+"FAILED_LOAD_QUEUE_PROCESS":"ER006 Load Queue Process Failed",
+"INVALID_QUEUE":"ER007 Unable to access orchestrator queue / Loading Error",
+"INVALID_INPUT":"ER007 Invalid Input Data",
+"ATHIGARAM_DROPDOWN_MISSING":"ER008 Athigaram dropdown doesn't exist",
+"SPLIT_ERROR":"ER009 Splitting cannot be performed since the delimiter is not available in extract module"
+}
